@@ -5,8 +5,8 @@ body {
     /* justify-content: center; */
     align-items : center;
     align-content: center ;
-    margin: 0;
     min-width: 100%;
+    margin: 0;
     padding: 0;
     overflow: hidden;
 
@@ -40,7 +40,7 @@ body {
     /* background-color: cornflowerblue; */
 }
 
-#popUp {
+.popUp {
     border : 2em solid black ;
     height: 35vh;
     width: 35vh;
@@ -50,30 +50,30 @@ body {
     justify-content: center;
     align-items: center;
     display : flex ;
-}
 
-#popUpBackground{
-    /* position:absolute; */
-    height: 100%;
-    width: 100%;
-    background-color: black;
-    border-radius: 50%;
-    opacity: 0.6;
-
-}
-#popUpResult {
-    /* text-align: center; */
-    position:absolute;
-    /* height: 1%; */
-    /* width: 1%; */
-    /* border-radius: 50%; */
-    font-size: 12em; 
-    /* bottom: 100%; */
-    /* left: 1vw ; */
-    /* text-align:left;  */
+    &__background{
+        /* position:absolute; */
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        border-radius: 50%;
+        opacity: 0.6;
     
+    }
+    &__result {
+        /* text-align: center; */
+        position:absolute;
+        /* height: 1%; */
+        /* width: 1%; */
+        /* border-radius: 50%; */
+        font-size: 12em; 
+        /* bottom: 100%; */
+        /* left: 1vw ; */
+        /* text-align:left;  */
+    }
 
 }
+
 
 #errorScreen {
     height: 100%;

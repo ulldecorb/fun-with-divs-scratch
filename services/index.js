@@ -34,6 +34,9 @@ document.addEventListener('keydown', function (event) {
         catchDiv();      
     }    
 });
+document.addEventListener('click', function () {    
+        catchDiv();          
+});
 
 //--------------------- ANIMATED BACKGROUND ------------------//
 
