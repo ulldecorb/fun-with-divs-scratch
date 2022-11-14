@@ -1,0 +1,153 @@
+body {
+    background-color: black;
+    display: flex;
+    flex-flow: column wrap;
+    /* justify-content: center; */
+    align-items : center;
+    align-content: center ;
+    margin: 0;
+    min-width: 100%;
+    padding: 0;
+    overflow: hidden;
+
+}
+
+#score {
+    height: 40%;
+    width: 80%;
+    font-size: 2em;
+    position: absolute;
+    bottom : 77% ;
+    display: flex;
+    /* flex-wrap: wrap ; */
+    flex-direction: row;
+    justify-content: center;
+    
+    
+    /* background-color: blueviolet; */
+}
+
+#hits {
+    max-width: 50%;
+    min-width: 50%;
+    text-align:right;
+    /* background-color: cadetblue; */
+}
+#fails {
+    max-width: 50%;
+    min-width: 50%;
+    text-align:left;
+    /* background-color: cornflowerblue; */
+}
+
+#popUp {
+    border : 2em solid black ;
+    height: 35vh;
+    width: 35vh;
+    /* background-color: pink; */
+    border-radius: 50%;
+    position:absolute;
+    justify-content: center;
+    align-items: center;
+    display : flex ;
+}
+
+#popUpBackground{
+    /* position:absolute; */
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    border-radius: 50%;
+    opacity: 0.6;
+
+}
+#popUpResult {
+    /* text-align: center; */
+    position:absolute;
+    /* height: 1%; */
+    /* width: 1%; */
+    /* border-radius: 50%; */
+    font-size: 12em; 
+    /* bottom: 100%; */
+    /* left: 1vw ; */
+    /* text-align:left;  */
+    
+
+}
+
+#errorScreen {
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    display:none ;
+}
+
+/* --------------------- ANIMATED BACKGROUND ------------------- */
+
+#patchBabyHole   {
+
+    height: 100px ;
+    width: 100px ;
+    background-color: red ;
+    border-radius: 50% ;
+    z-index : -1 ;
+    position : absolute ;
+    transition: background-color 0.5;
+}
+
+#father {
+    height : 100% ;
+    width : 100% ;
+    position: absolute;
+    display : flex ;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* z-index : 3 ; */
+    Overflow: hidden;
+}
+
+#son {
+    height : 70% ;
+    width : 70% ;
+    position: absolute;
+    display : flex ;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* z-index : 2 ; */
+}
+
+.baby1 {
+    height : 400% ;
+    width : 300% ;
+    border : 2px solid red ;
+    position: absolute;
+    display : flex ; 
+    justify-content: center;
+    align-items: center;
+    /* -ms-transform: rotate(20deg);     IE 9
+    transform: rotate(20deg); */
+}
+
+.baby1 > *{
+    border : 5px solid blue ;
+    box-shadow: 0 0 50px blue;
+}   
+
+.baby2 {
+    height : 400% ;
+    width : 300% ;
+    border : 2px solid red ;
+    position: absolute;
+    display : flex ; 
+    justify-content: center;
+    align-items: center;
+    /* -ms-transform: rotate(20deg);     IE 9
+    transform: rotate(20deg); */
+}
+
+.baby2 > *{
+    border : 5px solid red ;
+    box-shadow: 0 0 50px red;
+} 
