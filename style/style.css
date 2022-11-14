@@ -1,17 +1,16 @@
 body {
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   display: flex;
-  flex-flow: column wrap;
-  /* justify-content: center; */
+  justify-content: center;
   align-items: center;
-  align-content: center;
-  min-width: 100%;
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
 
-#score {
+.score {
   height: 40%;
   width: 80%;
   font-size: 2em;
@@ -23,15 +22,13 @@ body {
   justify-content: center;
   /* background-color: blueviolet; */
 }
-
-#hits {
+.score__hits {
   max-width: 50%;
   min-width: 50%;
   text-align: right;
   /* background-color: cadetblue; */
 }
-
-#fails {
+.score__fails {
   max-width: 50%;
   min-width: 50%;
   text-align: left;
@@ -47,7 +44,7 @@ body {
   position: absolute;
   justify-content: center;
   align-items: center;
-  display: flex;
+  display: none;
 }
 .popUp__background {
   /* position:absolute; */
@@ -69,7 +66,7 @@ body {
   /* text-align:left;  */
 }
 
-#errorScreen {
+.errorScreen {
   height: 100%;
   width: 100%;
   background-color: red;
@@ -123,8 +120,8 @@ body {
 }
 
 .baby1 > * {
-  border: 5px solid blue;
-  box-shadow: 0 0 50px blue;
+  border: 5px solid red;
+  box-shadow: 0 0 50px red;
 }
 
 .baby2 {
