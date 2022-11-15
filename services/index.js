@@ -2,8 +2,8 @@
 // -----------------------------------------------------------//
 
 const body = document.querySelector( "body" ) ; 
-const father = document.getElementById( "father" ) ;
-const son = document.getElementById( "son" ) ;
+// const father = document.getElementById( "father" ) ;
+// const son = document.getElementById( "son" ) ;
 const baby1 = document.getElementById( "baby1" ) ;
 const baby2 = document.getElementById( "baby2" ) ;
 const allBaby1 =document.getElementsByClassName( "baby1" ) ;
@@ -85,12 +85,10 @@ function createRotationBoxes() {
 function catchDiv() {  //  Evaluar y mostrar resultado del lance
     clearInterval( showResultBehaviour ) ;   
     if ( isHit() === true ) {
-        console.log("HIT") ;
         pauseRotation = true ;
         hits.innerHTML = hitCounterOnString() ;
         showResult();
     } else {
-        console.log("KK") ;
         pauseRotation = true ;
         fails.innerHTML = failCounterOnString() ;
         showResult();
@@ -106,12 +104,12 @@ function isHit() {
 }
 
 function hitCounterOnString() {
-    hitCounter += "🍻" ;  //  += "💖" ;
+    hitCounter += "🍻" ;  //  += "💖" ;  
     return hitCounter ;
 }
 
 function failCounterOnString() {
-    failCounter += "💩" ;
+    failCounter += "💩" ; 
     return failCounter ;
 }
 
@@ -131,11 +129,11 @@ function showResult() {
     let frame = 0 ; 
     let opacityStatus = 1 ;
     if ( isHit() === true ) {
-        popUpResult.innerText = "🍻" ;
+        popUpResult.innerText = "🍻" ; // 🍻😎😁😉👍🤘⚡🎉
         setRotationBackgroundColor( "darkorange" ) ;
         body.style.backgroundColor = "red"
     } else {
-        popUpResult.innerText = "💩" ;
+        popUpResult.innerText = "💩" ;  //💩💀😭🙈👎😤
         setRotationBackgroundColor( "white" ) ;
     }
     showResultBehaviour = setInterval( 
