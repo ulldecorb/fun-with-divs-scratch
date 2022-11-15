@@ -1,33 +1,36 @@
 // ------------------- VARIABLES -------------------------//
 // -----------------------------------------------------------//
 
-const body = document.querySelector( "body" ) ; 
+const body = document.querySelector( "body" ); 
 // const father = document.getElementById( "father" ) ;
 // const son = document.getElementById( "son" ) ;
-const baby1 = document.getElementById( "baby1" ) ;
-const baby2 = document.getElementById( "baby2" ) ;
-const allBaby1 =document.getElementsByClassName( "baby1" ) ;
-const allBaby2 = document.getElementsByClassName( "baby2" ) ;
-const patchBabyHole = document.getElementById( "patchBabyHole" ) ;
+const baby1 = document.getElementById( "baby1" );
+const baby2 = document.getElementById( "baby2" );
+const childrenX =document.getElementsByClassName( "baby1" );
+const chidrenY = document.getElementsByClassName( "baby2" );
+const patchBabyHole = document.getElementById( "patchBabyHole" );
 
-const score = document.getElementById( "score" ) ;
-const hits = document.getElementById( "hits" ) ;
-const fails = document.getElementById( "fails" ) ;
+const score = document.getElementById( "score" );
+const hits = document.getElementById( "hits" );
+const fails = document.getElementById( "fails" );
 
-const popUp = document.getElementById( "popUp" ) ;
-const popUpBackground = document.getElementById( "popUpBackground" ) ;
-const popUpResult = document.getElementById( "popUpResult" ) ;
+const popUp = document.getElementById( "popUp" );
+const popUpBackground = document.getElementById( "popUpBackground" );
+const popUpResult = document.getElementById( "popUpResult" );
 
-const errorScreen = document.getElementById( "errorScreen" ) ;
+const errorScreen = document.getElementById( "errorScreen" );
 
-let setRotate = { } ;
-let pauseRotation = false ; 
-let baby1DegreeCurrentValue = 0 ;
-let baby2DegreeCurrentValue = 0 ;
-startRotationBackGround( 70 ) ;
-let hitCounter = "" ;
-let failCounter = "" ;
-let showResultBehaviour = { } ;
+const succesIcons = ['🍻','😎','😁','😉','👍','🤘','⚡','🎉'];
+const failIcons = ['💩','💀','😭','🙈','👎','😤'];
+
+let setRotate = { };
+let pauseRotation = false; 
+let baby1DegreeCurrentValue = 0;
+let baby2DegreeCurrentValue = 0;
+startRotationBackGround( 70 );
+let hitCounter = "";
+let failCounter = "";
+let showResultBehaviour = { };
 
 document.addEventListener('keydown', function (event) {
     if ( event.key === "Enter" || event.key === " " ) {
@@ -45,19 +48,19 @@ function startRotationBackGround( rotationSpeed ) {  //  Girar fondo calidoscopi
     setRotate = setInterval(
 
         function() {          
-            baby1.style.transform = `rotate(${ baby1DegreeCurrentValue }deg)` ;
-            baby2.style.transform = `rotate(${ baby2DegreeCurrentValue }deg)` ;  
+            baby1.style.transform = `rotate(${ baby1DegreeCurrentValue }deg)`;
+            baby2.style.transform = `rotate(${ baby2DegreeCurrentValue }deg)`;  
             if ( pauseRotation !== true ) {
-                baby1DegreeCurrentValue ++ ;
-                baby2DegreeCurrentValue -- ;
+                baby1DegreeCurrentValue ++;
+                baby2DegreeCurrentValue --;
             }
             if ( baby1DegreeCurrentValue === 360 ) {
-                baby1.style.transform = `rotate(0deg)` ;
-                baby1DegreeCurrentValue = 0 ;
+                baby1.style.transform = `rotate(0deg)`;
+                baby1DegreeCurrentValue = 0;
             }
             if ( baby2DegreeCurrentValue === -360 ) {
-                baby2.style.transform = `rotate(0deg)` ;
-                baby2DegreeCurrentValue = 0 ;
+                baby2.style.transform = `rotate(0deg)`;
+                baby2DegreeCurrentValue = 0;
             }
         }
     , rotationSpeed );
@@ -123,18 +126,15 @@ function failCounterOnString() {
 }
 
 function setRotationBackgroundColor( color ) {
-    for ( let i = 0 ; i < allBaby1.length ; i++ ) {
-    // for ( let children in allBaby1 ) {
-        allBaby1[ i ].style.border = `5px solid ${ color }` ;
-        allBaby1[ i ].style.boxShadow = `0 0 50px ${ color }`;
-        allBaby2[ i ].style.border = `5px solid ${ color }` ;
-        allBaby2[ i ].style.boxShadow = `0 0 50px ${ color }`;
+    for ( let children of childrenX ) {
+        children.style.border = `5px solid ${ color }` ;
+        children.style.boxShadow = `0 0 50px ${ color }`;
+    }
+    for ( let children of chidrenY ) {
+        children.style.border = `5px solid ${ color }` ;
+        children.style.boxShadow = `0 0 50px ${ color }`;
     }
     patchBabyHole.style.backgroundColor = `${ color }` ;
-    
-    // for ( let children in allBaby1 ) {
-    //     console.log(children);
-    // }
 }
 
 function showResult() {  
@@ -143,14 +143,12 @@ function showResult() {
     let frame = 0 ; 
     let opacityStatus = 1 ;
     if ( isHit() === true ) {
-        const succesIcons = ['🍻','😎','😁','😉','👍','🤘','⚡','🎉'];
         const randomIndex = Math.floor(Math.random() * succesIcons.length);
         const setSuccessIcon = succesIcons[randomIndex];
         popUpResult.innerText = setSuccessIcon ; 
         setRotationBackgroundColor( "darkorange" ) ;
         body.style.backgroundColor = "red"
     } else {
-        const failIcons = ['💩','💀','😭','🙈','👎','😤'];
         const randomIndex = Math.floor(Math.random() * failIcons.length);
         const setFailIcon = failIcons[randomIndex];
         popUpResult.innerText = setFailIcon ;
@@ -197,4 +195,7 @@ function showResult() {
         }
     , 37 
     ) ;
+    setTimeout(() => {        
+        // clearInterval( showResultBehaviour ) ;   
+    }, 1333);
 }
