@@ -36,10 +36,8 @@ body {
 }
 
 .popUp {
-  border: 2em solid black;
-  height: 35vh;
-  width: 35vh;
-  /* background-color: pink; */
+  height: 45vh;
+  width: 45vh;
   border-radius: 50%;
   position: absolute;
   justify-content: center;
@@ -47,7 +45,6 @@ body {
   display: none;
 }
 .popUp__background {
-  /* position:absolute; */
   height: 100%;
   width: 100%;
   background-color: black;
@@ -55,15 +52,8 @@ body {
   opacity: 0.6;
 }
 .popUp__result {
-  /* text-align: center; */
   position: absolute;
-  /* height: 1%; */
-  /* width: 1%; */
-  /* border-radius: 50%; */
-  font-size: 12em;
-  /* bottom: 100%; */
-  /* left: 1vw ; */
-  /* text-align:left;  */
+  font-size: 34vh;
 }
 
 .errorScreen {

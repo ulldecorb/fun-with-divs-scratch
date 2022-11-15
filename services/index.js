@@ -96,7 +96,15 @@ function catchDiv() {  //  Evaluar y mostrar resultado del lance
 }
 
 function isHit() {
-    if ( baby1DegreeCurrentValue === 0 || baby1DegreeCurrentValue === 90 || baby1DegreeCurrentValue === 180 || baby1DegreeCurrentValue === 270 ) {
+    if ( baby1DegreeCurrentValue === 0
+        || baby1DegreeCurrentValue === 45 
+        || baby1DegreeCurrentValue === 90 
+        || baby1DegreeCurrentValue === 135 
+        || baby1DegreeCurrentValue === 180 
+        || baby1DegreeCurrentValue === 225 
+        || baby1DegreeCurrentValue === 270 
+        || baby1DegreeCurrentValue === 315 
+        ) {
         return true ;
     } else { 
         return false ; 
@@ -104,12 +112,12 @@ function isHit() {
 }
 
 function hitCounterOnString() {
-    hitCounter += "🍻" ;  //  += "💖" ;  
+    hitCounter += "💖" ;  //  += "🍻💖" ;  
     return hitCounter ;
 }
 
 function failCounterOnString() {
-    failCounter += "💩" ; 
+    failCounter += "💔" ; // 💩
     return failCounter ;
 }
 
@@ -129,11 +137,17 @@ function showResult() {
     let frame = 0 ; 
     let opacityStatus = 1 ;
     if ( isHit() === true ) {
-        popUpResult.innerText = "🍻" ; // 🍻😎😁😉👍🤘⚡🎉
+        const succesIcons = ['🍻','😎','😁','😉','👍','🤘','⚡','🎉'];
+        const randomIndex = Math.floor(Math.random() * succesIcons.length);
+        const setSuccessIcon = succesIcons[randomIndex];
+        popUpResult.innerText = setSuccessIcon ; 
         setRotationBackgroundColor( "darkorange" ) ;
         body.style.backgroundColor = "red"
     } else {
-        popUpResult.innerText = "💩" ;  //💩💀😭🙈👎😤
+        const failIcons = ['💩','💀','😭','🙈','👎','😤'];
+        const randomIndex = Math.floor(Math.random() * failIcons.length);
+        const setFailIcon = failIcons[randomIndex];
+        popUpResult.innerText = setFailIcon ;
         setRotationBackgroundColor( "white" ) ;
     }
     showResultBehaviour = setInterval( 

@@ -6,6 +6,9 @@ My first project with DOM. Lot of Fun.
 + [Introduction](#introduction)
 + [Technologies](#technologies)   
 + [Setup](#setup)
+<!-- + [Scope of functionalities](#scope-of-functionalities) -->
++ [Project status](#project-status)
+<!-- + [Sources](#sources) -->
 
 ## Introduction 
 Catch the div is a game to exercise visual reflexes. The goal is to get the exact moment when two moving squares are aligned.   
@@ -21,4 +24,23 @@ Project is created with:
 	
 ## Setup
 To run this project, run index.html file in your browser.
+
+<!-- ## Scope of functionalities -->
+## Project status
+LOGIC
+* [x] Migrate original style to SASS
+* [] Refactor html elements to reduce redundants
+* [] Modularize code    
+UI   
+* [] Create speed/color menu
+* [] Add events   
+    To strike
+    * [x] mouse click
+    * [x] space key
+    * [x] enter key   
+    To open menu
+    * [] scroll click
+* [] Update emojis database
+<!-- ## Sources -->
+
 
