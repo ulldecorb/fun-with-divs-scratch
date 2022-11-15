@@ -8,6 +8,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    // transition: 1s background-color;
 }
 
 .score {
@@ -47,6 +48,7 @@ body {
     justify-content: center;
     align-items: center;
     display : none ;
+    transition: 0.5s opacity;
 
     &__background{
         height: 100%;
@@ -74,7 +76,7 @@ body {
 
 /* --------------------- ANIMATED BACKGROUND ------------------- */
 
-#patchBabyHole   {
+.patchBabyHole   {
 
     height: 100px ;
     width: 100px ;
@@ -82,10 +84,10 @@ body {
     border-radius: 50% ;
     z-index : -1 ;
     position : absolute ;
-    transition: background-color 0.5;
+    // transition:  0.5s background-color;
 }
 
-#father {
+.father {
     height : 100% ;
     width : 100% ;
     position: absolute;

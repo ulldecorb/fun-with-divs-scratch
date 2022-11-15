@@ -43,6 +43,7 @@ body {
   justify-content: center;
   align-items: center;
   display: none;
+  transition: 0.5s opacity;
 }
 .popUp__background {
   height: 100%;
@@ -64,17 +65,16 @@ body {
 }
 
 /* --------------------- ANIMATED BACKGROUND ------------------- */
-#patchBabyHole {
+.patchBabyHole {
   height: 100px;
   width: 100px;
   background-color: red;
   border-radius: 50%;
   z-index: -1;
   position: absolute;
-  transition: background-color 0.5;
 }
 
-#father {
+.father {
   height: 100%;
   width: 100%;
   position: absolute;

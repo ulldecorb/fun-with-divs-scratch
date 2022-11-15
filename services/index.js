@@ -83,6 +83,7 @@ function createRotationBoxes() {
 //---------------------- GAME CODE ---------------------------//
 
 function catchDiv() {  //  Evaluar y mostrar resultado del lance
+    if (pauseRotation === true) return null;
     clearInterval( showResultBehaviour ) ;   
     if ( isHit() === true ) {
         pauseRotation = true ;
@@ -112,23 +113,28 @@ function isHit() {
 }
 
 function hitCounterOnString() {
-    hitCounter += "💖" ;  //  += "🍻💖" ;  
+    hitCounter += "💖" ;
     return hitCounter ;
 }
 
 function failCounterOnString() {
-    failCounter += "💔" ; // 💩
+    failCounter += "💔" ;
     return failCounter ;
 }
 
 function setRotationBackgroundColor( color ) {
     for ( let i = 0 ; i < allBaby1.length ; i++ ) {
+    // for ( let children in allBaby1 ) {
         allBaby1[ i ].style.border = `5px solid ${ color }` ;
         allBaby1[ i ].style.boxShadow = `0 0 50px ${ color }`;
         allBaby2[ i ].style.border = `5px solid ${ color }` ;
         allBaby2[ i ].style.boxShadow = `0 0 50px ${ color }`;
     }
     patchBabyHole.style.backgroundColor = `${ color }` ;
+    
+    // for ( let children in allBaby1 ) {
+    //     console.log(children);
+    // }
 }
 
 function showResult() {  
@@ -174,15 +180,16 @@ function showResult() {
                     popUp.style.opacity = `${ opacityStatus }` ;
                 }
             } else {
+                // const palete = ['white', 'grey', 'silver', 'blue', 'green'];
                 setRotationBackgroundColor( "white" ) ;
-                if ( frame > 12 && frame < 36) {
-                    opacityStatus -= 0.25 ;
-                    popUp.style.opacity = `${ opacityStatus }` ;
+                if ( frame > 12) {
+                    popUp.style.opacity = '0' ;
+                    pauseRotation = false ;
+                    setRotationBackgroundColor( "red" ) ;
+                    // body.style.backgroundColor = 'silver'
                 }
                 if ( frame === 36 ) {
                     popUp.style.display = "none" ;
-                    setRotationBackgroundColor( "red" ) ;
-                    pauseRotation = false ;
                     return null ;
                 }
             }
