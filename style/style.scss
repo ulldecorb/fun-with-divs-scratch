@@ -87,17 +87,17 @@ body {
     // transition:  0.5s background-color;
 }
 
-.father {
-    height : 100% ;
-    width : 100% ;
-    position: absolute;
-    display : flex ;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    /* z-index : 3 ; */
-    Overflow: hidden;
-}
+// .father {
+//     height : 100% ;
+//     width : 100% ;
+//     position: absolute;
+//     display : flex ;
+//     flex-direction: row;
+//     justify-content: center;
+//     align-items: center;
+//     /* z-index : 3 ; */
+//     Overflow: hidden;
+// }
 
 .son {
     height : 70% ;
@@ -110,7 +110,7 @@ body {
     /* z-index : 2 ; */
 }
 
-.baby1 {
+.children1 {
     height : 400% ;
     width : 300% ;
     border : 2px solid red ;
@@ -122,12 +122,12 @@ body {
     transform: rotate(20deg); */
 }
 
-.baby1 > *{
+.children1 > *{
     border : 5px solid red ;
     box-shadow: 0 0 50px red;
 }   
 
-.baby2 {
+.children2 {
     height : 400% ;
     width : 300% ;
     border : 2px solid red ;
@@ -139,7 +139,7 @@ body {
     transform: rotate(20deg); */
 }
 
-.baby2 > *{
+.children2 > *{
     border : 5px solid red ;
     box-shadow: 0 0 50px red;
 } 

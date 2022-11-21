@@ -25,12 +25,12 @@
 // ------------------- VARIABLES -------------------------//
 // -----------------------------------------------------------//
 
-const body = document.querySelector( "body" ); 
-const baby1 = document.getElementById( "baby1" );
-const baby2 = document.getElementById( "baby2" );
-const childrenX =document.getElementsByClassName( "baby1" );
-const childrenY = document.getElementsByClassName( "baby2" );
 const patchBabyHole = document.getElementById( "patchBabyHole" );
+const body = document.querySelector( "body" ); 
+const children1 = document.getElementById( "children1" );
+const children2 = document.getElementById( "children2" );
+const childrenX =document.getElementsByClassName( "children1" );
+const childrenY = document.getElementsByClassName( "children2" );
 
 const hits = document.getElementById( "hits" );
 const fails = document.getElementById( "fails" );
@@ -43,8 +43,8 @@ const failIcons = ['💩','💀','😭','🙈','👎','😤'];
 
 let setRotate = { };
 let pauseRotation = false; 
-let baby1DegreeCurrentValue = 0;
-let baby2DegreeCurrentValue = 0;
+let children1DegreeCurrentValue = 0;
+let children2DegreeCurrentValue = 0;
 startRotationBackGround( 70 );
 let hitCounter = "";
 let failCounter = "";
@@ -68,19 +68,19 @@ function startRotationBackGround( rotationSpeed ) {  //  Girar fondo calidoscopi
     setRotate = setInterval(
 
         function() {          
-            baby1.style.transform = `rotate(${ baby1DegreeCurrentValue }deg)`;
-            baby2.style.transform = `rotate(${ baby2DegreeCurrentValue }deg)`;  
+            children1.style.transform = `rotate(${ children1DegreeCurrentValue }deg)`;
+            children2.style.transform = `rotate(${ children2DegreeCurrentValue }deg)`;  
             if ( pauseRotation !== true ) {
-                baby1DegreeCurrentValue ++;
-                baby2DegreeCurrentValue --;
+                children1DegreeCurrentValue ++;
+                children2DegreeCurrentValue --;
             }
-            if ( baby1DegreeCurrentValue === 360 ) {
-                baby1.style.transform = `rotate(0deg)`;
-                baby1DegreeCurrentValue = 0;
+            if ( children1DegreeCurrentValue === 360 ) {
+                children1.style.transform = `rotate(0deg)`;
+                children1DegreeCurrentValue = 0;
             }
-            if ( baby2DegreeCurrentValue === -360 ) {
-                baby2.style.transform = `rotate(0deg)`;
-                baby2DegreeCurrentValue = 0;
+            if ( children2DegreeCurrentValue === -360 ) {
+                children2.style.transform = `rotate(0deg)`;
+                children2DegreeCurrentValue = 0;
             }
         }
     , rotationSpeed );
@@ -89,16 +89,16 @@ function startRotationBackGround( rotationSpeed ) {  //  Girar fondo calidoscopi
 function createRotationBoxes() {
     for ( let i = 0 ; i < 2 ; i++ ) {
         for ( let j = 0 ; j < 50 ; j++ ) {
-            let babyHood = document.createElement( "div" );
-            babyHood.id = `baby${ i + 1 }${ j }` ;
-            babyHood.className = `baby${ i + 1 }` ;
-            babyHood.style.width = `90%` ;
-            babyHood.style.height = `90%` ;
-            babyHood.style.position = "absolute" ;
-            babyHood.style.display = "flex" ;
-            babyHood.style.justifyContent = "center" ;
-            babyHood.style.alignItems = "center" ;
-            document.getElementsByClassName( `baby${ i + 1 }` )[ j ].insertAdjacentElement( "afterbegin" , babyHood ) ;
+            let childrenHood = document.createElement( "div" );
+            childrenHood.id = `children${ i + 1 }${ j }` ;
+            childrenHood.className = `children${ i + 1 }` ;
+            childrenHood.style.width = `90%` ;
+            childrenHood.style.height = `90%` ;
+            childrenHood.style.position = "absolute" ;
+            childrenHood.style.display = "flex" ;
+            childrenHood.style.justifyContent = "center" ;
+            childrenHood.style.alignItems = "center" ;
+            document.getElementsByClassName( `children${ i + 1 }` )[ j ].insertAdjacentElement( "afterbegin" , childrenHood ) ;
         }
     }
 }
@@ -120,14 +120,14 @@ function catchDiv() {  //  Evaluar y mostrar resultado del lance
 }
 
 function isHit() {
-    if ( baby1DegreeCurrentValue === 0
-        || baby1DegreeCurrentValue === 45 
-        || baby1DegreeCurrentValue === 90 
-        || baby1DegreeCurrentValue === 135 
-        || baby1DegreeCurrentValue === 180 
-        || baby1DegreeCurrentValue === 225 
-        || baby1DegreeCurrentValue === 270 
-        || baby1DegreeCurrentValue === 315 
+    if ( children1DegreeCurrentValue === 0
+        || children1DegreeCurrentValue === 45 
+        || children1DegreeCurrentValue === 90 
+        || children1DegreeCurrentValue === 135 
+        || children1DegreeCurrentValue === 180 
+        || children1DegreeCurrentValue === 225 
+        || children1DegreeCurrentValue === 270 
+        || children1DegreeCurrentValue === 315 
         ) {
         return true ;
     } else { 
