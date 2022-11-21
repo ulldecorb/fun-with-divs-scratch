@@ -86,7 +86,7 @@ body {
   Overflow: hidden;
 }
 
-#son {
+.son {
   height: 70%;
   width: 70%;
   position: absolute;

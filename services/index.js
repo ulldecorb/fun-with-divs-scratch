@@ -1,24 +1,42 @@
+// import { 
+//     body,
+//     baby1,baby2,
+//     childrenX,
+//     childrenY,
+//     patchBabyHole,
+//     score,
+//     hits,
+//     fails,
+//     popUp,
+//     popUpBackground,
+//     popUpResult,
+//     errorScreen,
+//     succesIcons,
+//     failIcons,
+//     setRotate,
+//     pauseRotation,
+//     baby1DegreeCurrentValue,
+//     baby2DegreeCurrentValue,
+//     hitCounter,
+//     failCounter,
+//     showResultBehaviour
+// } from './variables';
+// import {catchDiv} from './functions.js';
 // ------------------- VARIABLES -------------------------//
 // -----------------------------------------------------------//
 
 const body = document.querySelector( "body" ); 
-// const father = document.getElementById( "father" ) ;
-// const son = document.getElementById( "son" ) ;
 const baby1 = document.getElementById( "baby1" );
 const baby2 = document.getElementById( "baby2" );
 const childrenX =document.getElementsByClassName( "baby1" );
-const chidrenY = document.getElementsByClassName( "baby2" );
+const childrenY = document.getElementsByClassName( "baby2" );
 const patchBabyHole = document.getElementById( "patchBabyHole" );
 
-const score = document.getElementById( "score" );
 const hits = document.getElementById( "hits" );
 const fails = document.getElementById( "fails" );
 
 const popUp = document.getElementById( "popUp" );
-const popUpBackground = document.getElementById( "popUpBackground" );
 const popUpResult = document.getElementById( "popUpResult" );
-
-const errorScreen = document.getElementById( "errorScreen" );
 
 const succesIcons = ['🍻','😎','😁','😉','👍','🤘','⚡','🎉'];
 const failIcons = ['💩','💀','😭','🙈','👎','😤'];
@@ -32,6 +50,8 @@ let hitCounter = "";
 let failCounter = "";
 let showResultBehaviour = { };
 
+
+// startRotationBackGround( 70 );  
 document.addEventListener('keydown', function (event) {
     if ( event.key === "Enter" || event.key === " " ) {
         catchDiv();      
@@ -130,7 +150,7 @@ function setRotationBackgroundColor( color ) {
         children.style.border = `5px solid ${ color }` ;
         children.style.boxShadow = `0 0 50px ${ color }`;
     }
-    for ( let children of chidrenY ) {
+    for ( let children of childrenY ) {
         children.style.border = `5px solid ${ color }` ;
         children.style.boxShadow = `0 0 50px ${ color }`;
     }
