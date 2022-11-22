@@ -25,12 +25,12 @@
 // ------------------- VARIABLES -------------------------//
 // -----------------------------------------------------------//
 
-const patchBabyHole = document.getElementById( "patchBabyHole" );
 const body = document.querySelector( "body" ); 
 const children1 = document.getElementById( "children1" );
 const children2 = document.getElementById( "children2" );
 const childrenX =document.getElementsByClassName( "children1" );
 const childrenY = document.getElementsByClassName( "children2" );
+const patchBabyHole = document.getElementById( "patchBabyHole" );
 
 const hits = document.getElementById( "hits" );
 const fails = document.getElementById( "fails" );
@@ -45,13 +45,12 @@ let setRotate = { };
 let pauseRotation = false; 
 let children1DegreeCurrentValue = 0;
 let children2DegreeCurrentValue = 0;
-startRotationBackGround( 70 );
 let hitCounter = "";
 let failCounter = "";
 let showResultBehaviour = { };
 
 
-// startRotationBackGround( 70 );  
+startRotationBackGround( 70 );  
 document.addEventListener('keydown', function (event) {
     if ( event.key === "Enter" || event.key === " " ) {
         catchDiv();      
@@ -90,7 +89,7 @@ function createRotationBoxes() {
     for ( let i = 0 ; i < 2 ; i++ ) {
         for ( let j = 0 ; j < 50 ; j++ ) {
             let childrenHood = document.createElement( "div" );
-            childrenHood.id = `children${ i + 1 }${ j }` ;
+            childrenHood.id = `children${ j + 1 }${ i + 1}` ;
             childrenHood.className = `children${ i + 1 }` ;
             childrenHood.style.width = `90%` ;
             childrenHood.style.height = `90%` ;
@@ -102,6 +101,7 @@ function createRotationBoxes() {
         }
     }
 }
+
 
 //---------------------- GAME CODE ---------------------------//
 

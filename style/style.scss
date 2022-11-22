@@ -143,3 +143,94 @@ body {
     border : 5px solid red ;
     box-shadow: 0 0 50px red;
 } 
+
+.childrens {
+    width: 90% ;
+    height: 90% ;
+    position: absolute ;
+    display: flex ;
+    justify-content: center ;
+    align-items: center ;
+}
+
+.menu {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+
+    &__background {
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.281);
+        position: absolute;
+    }
+
+    &__menu-box {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.548);
+
+        
+        .menu-box {
+
+            &__background {
+                height: 80vmin;
+                width: 80vmin;
+                border-radius: 50%;
+                background-color: #000;
+                position: absolute;
+                
+                .background {
+                    
+                    &__star {
+                        height: 80vmin;
+                        width: 80vmin;
+                        border: 4px dashed rgba(252, 247, 0, 0.712);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position: absolute;
+                        animation-name: spinY;
+                        animation-duration: 34s;
+                        animation-timing-function: ease-in-out;
+                        animation-iteration-count: infinite;
+                        
+                        &:last-child {
+                            // transform: rotate(22.5deg);
+                            animation-name: spinX;
+                        }
+                        
+                    }
+                    
+                    &__square {
+                        height: 70vmin;
+                        width: 70vmin;
+                        border: 4px dashed rgba(224, 118, 19, 0.788);
+                        position:  absolute;
+
+                        &:last-child {
+                            transform: rotate(45deg);
+                            height: 80vmin;
+                            width: 80vmin;
+                        }
+                    }
+
+                    
+                }
+            }
+        }
+    }
+}
+
+@keyframes spinY {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+  }
+
+@keyframes spinX {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(-360deg);}
+  }
