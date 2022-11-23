@@ -57,13 +57,6 @@ body {
   font-size: 34vh;
 }
 
-.errorScreen {
-  height: 100%;
-  width: 100%;
-  background-color: red;
-  display: none;
-}
-
 /* --------------------- ANIMATED BACKGROUND ------------------- */
 .patchBabyHole {
   height: 100px;
@@ -82,7 +75,6 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  /* z-index : 2 ; */
 }
 
 .children1 {
@@ -93,8 +85,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* -ms-transform: rotate(20deg);     IE 9
-  transform: rotate(20deg); */
 }
 
 .children1 > * {
@@ -110,8 +100,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* -ms-transform: rotate(20deg);     IE 9
-  transform: rotate(20deg); */
 }
 
 .children2 > * {
@@ -134,8 +122,8 @@ body {
   position: absolute;
 }
 .menu__background {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   background-color: rgba(0, 0, 0, 0.281);
   position: absolute;
 }
@@ -148,13 +136,12 @@ body {
   background-color: rgba(0, 0, 0, 0.548);
 }
 .menu__menu-box .menu-box__background {
-  height: 80vmin;
-  width: 80vmin;
-  border-radius: 50%;
-  background-color: #000;
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.menu__menu-box .menu-box__background .background__star {
+.menu__menu-box .menu-box__background .background {
   height: 80vmin;
   width: 80vmin;
   border: 4px dashed rgba(252, 247, 0, 0.712);
@@ -171,7 +158,7 @@ body {
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
 }
-.menu__menu-box .menu-box__background .background__star:last-child {
+.menu__menu-box .menu-box__background .background:last-child {
   -webkit-animation-name: spinX;
           animation-name: spinX;
 }
@@ -185,6 +172,84 @@ body {
   transform: rotate(45deg);
   height: 80vmin;
   width: 80vmin;
+}
+.menu__menu-box .menu-box__controls {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5vmin;
+  border: 2px solid rgb(224, 118, 19);
+  height: 70vmin;
+  width: 70vmin;
+  border-radius: 50%;
+  background-color: #000;
+  padding: 10px;
+}
+.menu__menu-box .menu-box__controls .speed {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.menu__menu-box .menu-box__controls .speed__title {
+  border-bottom: 2px solid #fff;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+.menu__menu-box .menu-box__controls .speed .selector {
+  background-color: rgb(31, 192, 25);
+  cursor: pointer;
+}
+.menu__menu-box .menu-box__controls .speed .selector:nth-child(2) {
+  background-color: rgb(236, 223, 30);
+}
+.menu__menu-box .menu-box__controls .speed .selector:nth-child(3) {
+  background-color: rgb(192, 78, 25);
+}
+.menu__menu-box .menu-box__controls .colors {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.menu__menu-box .menu-box__controls .colors__title {
+  border-bottom: 2px solid #fff;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.menu__menu-box .menu-box__controls .colors__handler-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+}
+.menu__menu-box .menu-box__controls .colors__handler {
+  background-color: red;
+  border: 2px solid #000;
+  outline: 2px solid red;
+  cursor: pointer;
+}
+.menu__menu-box .menu-box__controls .colors__handler:nth-child(2) {
+  background-color: pink;
+  border: 2px solid #fff;
+  outline: 2px solid pink;
+  color: #fff;
+}
+.menu__menu-box .menu-box__controls .colors__handler:nth-child(3) {
+  background-color: green;
+  border: 2px solid rgb(31, 192, 25);
+  outline: 2px solid green;
+  color: rgb(31, 192, 25);
+}
+.menu__menu-box .menu-box__controls .colors__handler:nth-child(4) {
+  background-color: rgb(66, 105, 231);
+  border: 2px solid rgb(23, 173, 161);
+  outline: 2px solid rgb(233, 247, 38);
+  color: rgb(233, 160, 252);
 }
 
 @-webkit-keyframes spinY {
