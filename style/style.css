@@ -251,6 +251,9 @@ body {
   outline: 2px solid rgb(233, 247, 38);
   color: rgb(233, 160, 252);
 }
+.menu__menu-box .menu-box__controls .colors__handler:hover {
+  outline-width: 4px;
+}
 
 @-webkit-keyframes spinY {
   from {

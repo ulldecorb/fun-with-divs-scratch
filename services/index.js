@@ -26,11 +26,16 @@
 // -----------------------------------------------------------//
 
 const body = document.querySelector( "body" ); 
+const son = document.getElementById( "son" ); 
 const children1 = document.getElementById( "children1" );
 const children2 = document.getElementById( "children2" );
 const childrenX =document.getElementsByClassName( "children1" );
 const childrenY = document.getElementsByClassName( "children2" );
 const patchBabyHole = document.getElementById( "patchBabyHole" );
+const colorClassic = document.getElementById( "colorClassic" );
+const colorPastel = document.getElementById( "colorPastel" );
+const colorCode = document.getElementById( "colorCode" );
+const colorRandom = document.getElementById( "colorRandom" );
 
 const hits = document.getElementById( "hits" );
 const fails = document.getElementById( "fails" );
@@ -51,14 +56,36 @@ let showResultBehaviour = { };
 
 
 startRotationBackGround( 70 );  
-document.addEventListener('keydown', function (event) {
+
+// handler hit events
+
+son.addEventListener('keydown', function (event) {
     if ( event.key === "Enter" || event.key === " " ) {
         catchDiv();      
     }    
 });
-document.addEventListener('click', function () {    
+son.addEventListener('click', function () {    
         catchDiv();          
 });
+
+// select color events
+
+ colorClassic.addEventListener('click', () => {
+        setRotationBackgroundColor( "red" ) ;
+        body.style.backgroundColor = "black"
+    });
+colorPastel.addEventListener('click', () => {
+        setRotationBackgroundColor( "pink" ) ;
+        body.style.backgroundColor = "white"
+    });
+colorCode.addEventListener('click', () => {
+        setRotationBackgroundColor( "rgb(31, 192, 25)" ) ;
+        body.style.backgroundColor = "green"
+    });
+colorRandom.addEventListener('click', () => {
+        setRotationBackgroundColor( "teal" ) ;
+        body.style.backgroundColor = "blue"
+    });
 
 //--------------------- ANIMATED BACKGROUND ------------------//
 
@@ -101,7 +128,6 @@ function createRotationBoxes() {
         }
     }
 }
-
 
 //---------------------- GAME CODE ---------------------------//
 
@@ -216,6 +242,6 @@ function showResult() {
     , 37 
     ) ;
     setTimeout(() => {        
-        // clearInterval( showResultBehaviour ) ;   
+        clearInterval( showResultBehaviour ) ;   
     }, 1333);
 }
