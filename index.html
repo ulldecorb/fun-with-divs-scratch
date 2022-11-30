@@ -22,23 +22,40 @@
             <div class="popUp__result" id="popUpResult"></div>
         </div>
         <div class="patchBabyHole" id="patchBabyHole"></div>
+        <button id="openMenu" class="menu-handler--open">MENU</button>
     </section>
-    <!-- <div class="errorScreen" id="errorScreen"></div> -->
     <section class="menu" id="menu">
         <div class="menu__background"></div>
         <div class="menu__menu-box">
             <div class="menu-box__background">
-                <div class="background__star">
+                <div class="background">
                     <span class="background__square"></span>
                     <span class="background__square"></span>
                 </div>
-                <div class="background__star">
+                <div class="background">
                     <div class="background__square"></div>
                     <div class="background__square"></div>
                 </div>
             </div>
-            <div class="controls">
-                <button class="" type="button"></button>
+            <div class="menu-box__controls">
+                <div class="speed">
+                    <h3 class="speed__title">SPEED</h3>
+                    <div class="speed__selector-box">
+                        <button id="speedEasy" class="selector">Easy</button>
+                        <button id="speedNormal" class="selector">Normal</button>
+                        <button id="speedPro" class="selector">Pro</button>
+                    </div>
+                </div>
+                <div class="colors">
+                    <h3 class="colors__title">COLOR</h3>
+                    <div class="colors__handler-box">
+                        <button id="colorClassic" class="colors__handler" type="button">Classic</button>
+                        <button id="colorPastel" class="colors__handler" type="button">Pastel</button>
+                        <button id="colorCode" class="colors__handler" type="button">Code</button>
+                        <button id="colorRandom" class="colors__handler" type="button">Random</button>
+                    </div>
+                </div>
+                <button id="closeMenu" class="menu-handler--close">X</button>
             </div>
         </div>
     </section>

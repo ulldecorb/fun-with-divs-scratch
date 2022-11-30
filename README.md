@@ -31,16 +31,22 @@ LOGIC
 * [x] Migrate original style to SASS
 * [] Refactor html elements to reduce redundants
 * [] Modularize code    
+* [x] Update emojis database   
 UI   
-* [] Create speed/color menu
-* [] Add events   
+* [] Create speed menu
+* [x] Create color menu
+* [x] Add events   
     To strike
     * [x] mouse click
     * [x] space key
     * [x] enter key   
     To open menu
+    * [] button
     * [] scroll click
-* [] Update emojis database
+    To close menu
+    * [x] button
+UX
+* [] Add tab navigation
 <!-- ## Sources -->
 
 

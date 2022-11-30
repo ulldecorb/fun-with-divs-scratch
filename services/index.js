@@ -26,11 +26,24 @@
 // -----------------------------------------------------------//
 
 const body = document.querySelector( "body" ); 
+
+const son = document.getElementById( "son" ); 
 const children1 = document.getElementById( "children1" );
 const children2 = document.getElementById( "children2" );
 const childrenX =document.getElementsByClassName( "children1" );
 const childrenY = document.getElementsByClassName( "children2" );
 const patchBabyHole = document.getElementById( "patchBabyHole" );
+
+const menu = document.getElementById( "menu" );
+const openMenu = document.getElementById( "openMenu" );
+const closeMenu = document.getElementById( "closeMenu" );
+const speedEasy = document.getElementById( "speedEasy" );
+const speedNormal = document.getElementById( "speedNormal" );
+const speedPro = document.getElementById( "speedPro" );
+const colorClassic = document.getElementById( "colorClassic" );
+const colorPastel = document.getElementById( "colorPastel" );
+const colorCode = document.getElementById( "colorCode" );
+const colorRandom = document.getElementById( "colorRandom" );
 
 const hits = document.getElementById( "hits" );
 const fails = document.getElementById( "fails" );
@@ -51,19 +64,54 @@ let showResultBehaviour = { };
 
 
 startRotationBackGround( 70 );  
-document.addEventListener('keydown', function (event) {
+
+// open/close menu handler
+
+openMenu.addEventListener("click", () => { menu.style.display = 'block'}, true);
+closeMenu.addEventListener("click", () => { menu.style.display = 'none'});
+
+// handler hit events
+
+son.addEventListener('keydown', function (event) {
     if ( event.key === "Enter" || event.key === " " ) {
         catchDiv();      
     }    
 });
-document.addEventListener('click', function () {    
+son.addEventListener('click', function () {    
         catchDiv();          
 });
+
+// select color events
+
+ colorClassic.addEventListener('click', () => {
+        setRotationBackgroundColor( "red" ) ;
+        body.style.backgroundColor = "black"
+    });
+colorPastel.addEventListener('click', () => {
+        setRotationBackgroundColor( "pink" ) ;
+        body.style.backgroundColor = "white"
+    });
+colorCode.addEventListener('click', () => {
+        setRotationBackgroundColor( "rgb(31, 192, 25)" ) ;
+        body.style.backgroundColor = "green"
+    });
+colorRandom.addEventListener('click', () => {
+        setRotationBackgroundColor( "teal" ) ;
+        body.style.backgroundColor = "blue"
+    });
+
+// select speed handler
+
+speedEasy.addEventListener("click", () => {startRotationBackGround( 150 )});
+speedNormal.addEventListener("click", () => {startRotationBackGround( 70 )});
+speedPro.addEventListener("click", () => {startRotationBackGround( 25 )});
+
+createRotationBoxes();
+
 
 //--------------------- ANIMATED BACKGROUND ------------------//
 
 function startRotationBackGround( rotationSpeed ) {  //  Girar fondo calidoscopico  //  rotationSpeed = 50 default mode / 100 easy mode / 25 f@## mode
-    createRotationBoxes();
     setRotate = setInterval(
 
         function() {          
@@ -102,18 +150,14 @@ function createRotationBoxes() {
     }
 }
 
-
 //---------------------- GAME CODE ---------------------------//
 
 function catchDiv() {  //  Evaluar y mostrar resultado del lance
     if (pauseRotation === true) return null;
-    clearInterval( showResultBehaviour ) ;   
     if ( isHit() === true ) {
-        pauseRotation = true ;
         hits.innerHTML = hitCounterOnString() ;
         showResult();
     } else {
-        pauseRotation = true ;
         fails.innerHTML = failCounterOnString() ;
         showResult();
     }
@@ -157,65 +201,56 @@ function setRotationBackgroundColor( color ) {
     patchBabyHole.style.backgroundColor = `${ color }` ;
 }
 
-function showResult() {  
+function showResult() {
+    const backgroundColor = body.style.backgroundColor;
+    let borderColor = children1.style.borderColor;
+    pauseRotation = true ;
     popUp.style.display = "flex" ;
     popUp.style.opacity = 1 ;
-    let frame = 0 ; 
-    let opacityStatus = 1 ;
+
+    if (borderColor === '') {borderColor = 'red'}
+
     if ( isHit() === true ) {
         const randomIndex = Math.floor(Math.random() * succesIcons.length);
         const setSuccessIcon = succesIcons[randomIndex];
-        popUpResult.innerText = setSuccessIcon ; 
-        setRotationBackgroundColor( "darkorange" ) ;
-        body.style.backgroundColor = "red"
+        popUpResult.innerText = setSuccessIcon; 
+        setRotationBackgroundColor( "darkorange" );
+        body.style.backgroundColor = "red";
+
+        setTimeout(() => {
+            setRotationBackgroundColor( "red" );
+            body.style.backgroundColor = "darkorange";
+        }, 500);
+        
+        setTimeout(() => {
+            setRotationBackgroundColor( "darkorange" );
+            body.style.backgroundColor = "red";
+            popUp.style.opacity = '0';
+        }, 1000);
+
+        setTimeout(() => {
+            popUp.style.display = "none" ;
+            setRotationBackgroundColor( borderColor );
+            body.style.backgroundColor = backgroundColor                
+            pauseRotation = false ;
+        }, 1500);
     } else {
         const randomIndex = Math.floor(Math.random() * failIcons.length);
         const setFailIcon = failIcons[randomIndex];
-        popUpResult.innerText = setFailIcon ;
-        setRotationBackgroundColor( "white" ) ;
-    }
-    showResultBehaviour = setInterval( 
+        popUpResult.innerText = setFailIcon;
+        body.style.backgroundColor = 'black';
+        setRotationBackgroundColor( '#fff' );
 
-        function () {                
-            if ( isHit() === true ) {             
-                if ( frame === 12  ) {    
-                    setRotationBackgroundColor( "red" ) ;
-                    body.style.backgroundColor = "darkorange"
-                } 
-                if ( frame ===  24  ) {
-                    setRotationBackgroundColor( "darkorange" ) ;
-                    body.style.backgroundColor = "red"                    
-                } 
-                if ( frame === 36 ) {
-                    popUp.style.display = "none" ;
-                    setRotationBackgroundColor( "red" ) ;
-                    body.style.backgroundColor = "black"                
-                    pauseRotation = false ;
-                    return null ;
-                }
-                if ( frame > 12 && frame < 36) {
-                    opacityStatus -= 0.25 ;
-                    popUp.style.opacity = `${ opacityStatus }` ;
-                }
-            } else {
-                // const palete = ['white', 'grey', 'silver', 'blue', 'green'];
-                setRotationBackgroundColor( "white" ) ;
-                if ( frame > 12) {
-                    popUp.style.opacity = '0' ;
-                    pauseRotation = false ;
-                    setRotationBackgroundColor( "red" ) ;
-                    // body.style.backgroundColor = 'silver'
-                }
-                if ( frame === 36 ) {
-                    popUp.style.display = "none" ;
-                    return null ;
-                }
-            }
-            frame++ ;
-        }
-    , 37 
-    ) ;
-    setTimeout(() => {        
-        // clearInterval( showResultBehaviour ) ;   
-    }, 1333);
+        setTimeout(() => {
+            popUp.style.opacity = '0';
+            pauseRotation = false;
+            setRotationBackgroundColor( borderColor );
+            body.style.backgroundColor = backgroundColor
+        }, 750);
+
+        setTimeout(() => {
+            popUp.style.display = "none";
+            popUp.style.opacity = '1';
+        }, 1500);
+    }
 }
