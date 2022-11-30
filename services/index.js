@@ -209,8 +209,6 @@ function showResult() {
     popUp.style.opacity = 1 ;
 
     if (borderColor === '') {borderColor = 'red'}
-    
-    console.log({ borderColor, backgroundColor});
 
     if ( isHit() === true ) {
         const randomIndex = Math.floor(Math.random() * succesIcons.length);
