@@ -1,27 +1,3 @@
-// import { 
-//     body,
-//     baby1,baby2,
-//     childrenX,
-//     childrenY,
-//     patchBabyHole,
-//     score,
-//     hits,
-//     fails,
-//     popUp,
-//     popUpBackground,
-//     popUpResult,
-//     errorScreen,
-//     succesIcons,
-//     failIcons,
-//     setRotate,
-//     pauseRotation,
-//     baby1DegreeCurrentValue,
-//     baby2DegreeCurrentValue,
-//     hitCounter,
-//     failCounter,
-//     showResultBehaviour
-// } from './variables';
-// import {catchDiv} from './functions.js';
 // ------------------- VARIABLES -------------------------//
 // -----------------------------------------------------------//
 
@@ -62,17 +38,22 @@ let hitCounter = "";
 let failCounter = "";
 let showResultBehaviour = { };
 
-
 startRotationBackGround( 70 );  
 
 // open/close menu handler
 
-openMenu.addEventListener("click", () => { menu.style.display = 'block'}, true);
-closeMenu.addEventListener("click", () => { menu.style.display = 'none'});
+openMenu.addEventListener("click", () => { 
+    menu.style.display = 'block';
+    openMenu.style.display = 'none';
+});
+closeMenu.addEventListener("click", () => { 
+    menu.style.display = 'none';
+    openMenu.style.display = 'flex';
+});
 
 // handler hit events
 
-son.addEventListener('keydown', function (event) {
+body.addEventListener('keydown', function (event) {
     if ( event.key === "Enter" || event.key === " " ) {
         catchDiv();      
     }    
@@ -102,7 +83,7 @@ colorRandom.addEventListener('click', () => {
 
 // select speed handler
 
-speedEasy.addEventListener("click", () => {startRotationBackGround( 150 )});
+speedEasy.addEventListener("click", () => {startRotationBackGround( 100 )});
 speedNormal.addEventListener("click", () => {startRotationBackGround( 70 )});
 speedPro.addEventListener("click", () => {startRotationBackGround( 25 )});
 
@@ -112,6 +93,7 @@ createRotationBoxes();
 //--------------------- ANIMATED BACKGROUND ------------------//
 
 function startRotationBackGround( rotationSpeed ) {  //  Girar fondo calidoscopico  //  rotationSpeed = 50 default mode / 100 easy mode / 25 f@## mode
+    clearInterval(setRotate);
     setRotate = setInterval(
 
         function() {          

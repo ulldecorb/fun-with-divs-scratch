@@ -67,11 +67,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-.son .menu-handler--open {
-  position: absolute;
-  right: 0;
-  top: 0;
-}
 .son .patchBabyHole {
   height: 100px;
   width: 100px;
@@ -106,13 +101,31 @@ body {
   border: 5px solid red;
   box-shadow: 0 0 50px red;
 }
-.son .childrens {
-  width: 90%;
-  height: 90%;
+
+.menu-handler--open {
   position: absolute;
-  display: flex;
+  right: 2vmin;
+  top: 2vmin;
+  border: none;
+  background-color: #000;
+  border-radius: 1vmin;
+  padding: 1vmin;
+  display: none;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+.menu-handler--open .line {
+  width: 1.2vw;
+  border: 1px solid white;
+  margin: 0.3vmin;
+}
+.menu-handler--open:hover {
+  background-color: white;
+}
+.menu-handler--open:hover .line {
+  border-color: #000;
 }
 
 .menu {
