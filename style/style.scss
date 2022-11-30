@@ -15,25 +15,44 @@ body {
     width: 80%;
     font-size: 2em;
     position: absolute;
-    bottom : 77% ;
+    top : 10px;
     display: flex;
-    /* flex-wrap: wrap ; */
-    flex-direction: row;
     justify-content: center;
-    /* background-color: blueviolet; */
-    
-    &__hits {
-        max-width: 50%;
-        min-width: 50%;
-        text-align:right;
-        /* background-color: cadetblue; */
-    }
 
-    &__fails {
-        max-width: 50%;
-        min-width: 50%;
-        text-align:left;
-        /* background-color: cornflowerblue; */
+    .result-box {
+        height: 45px;
+        background-color: #000;
+        // border-radius: 22.5px;
+        // border-bottom-left-radius: 22.5px;
+        // border-top-left-radius: 22.5px;
+        display: flex;
+        
+        &:nth-child(1) {
+            border-bottom-left-radius: 22.5px;
+            border-top-left-radius: 22.5px;
+        }
+        
+        &:nth-child(2) {
+            border-bottom-right-radius: 22.5px;
+            border-top-right-radius: 22.5px;
+        }
+        
+        &__icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__result {
+            height: 30px;
+            width: 30px;
+            margin: 7.5px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
 }
 
@@ -65,10 +84,9 @@ body {
 
 /* --------------------- ANIMATED BACKGROUND ------------------- */
 
-
 .son {
-    height : 70% ;
-    width : 70% ;
+    height : 100% ;
+    width : 100% ;
     position: absolute;
     display : flex ;
     flex-direction: row;
@@ -114,17 +132,9 @@ body {
     .children2 > *{
         border : 5px solid red ;
         box-shadow: 0 0 50px red;
-    } 
-    
-    // .childrens {
-    //     width: 90% ;
-    //     height: 90% ;
-    //     position: absolute ;
-    //     display: flex ;
-    //     justify-content: center ;
-    //     align-items: center ;
-    // }
+    }
 }
+
 .menu-handler--open {
     position: absolute;
     right: 2vmin;
@@ -133,7 +143,7 @@ body {
     background-color: #000;
     border-radius: 1vmin;
     padding: 1vmin;
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -161,7 +171,7 @@ body {
     height: 100vh;
     width: 100vw;
     position: absolute;
-    // display: none;
+    display: none;
 
     &__background {
         height: 100vh;

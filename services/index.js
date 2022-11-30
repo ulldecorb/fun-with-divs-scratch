@@ -21,6 +21,8 @@ const colorPastel = document.getElementById( "colorPastel" );
 const colorCode = document.getElementById( "colorCode" );
 const colorRandom = document.getElementById( "colorRandom" );
 
+let totalHits = 0;
+let totalFails = 0;
 const hits = document.getElementById( "hits" );
 const fails = document.getElementById( "fails" );
 
@@ -137,10 +139,12 @@ function createRotationBoxes() {
 function catchDiv() {  //  Evaluar y mostrar resultado del lance
     if (pauseRotation === true) return null;
     if ( isHit() === true ) {
-        hits.innerHTML = hitCounterOnString() ;
+        totalHits ++;
+        hits.innerHTML = totalHits ;
         showResult();
     } else {
-        fails.innerHTML = failCounterOnString() ;
+        totalFails ++;
+        fails.innerHTML = totalFails ;
         showResult();
     }
 }

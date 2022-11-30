@@ -11,16 +11,24 @@
 </head>
 <body>
     <section id="son" class="son">
+        <div class="patchBabyHole" id="patchBabyHole"></div>
         <div id="children1" class="children1"></div>          
         <div id="children2" class="children2"></div>
+
         <div class="score" id="score">
-            <div class="score__hits" id="hits"></div>
-            <div class="score__fails" id="fails"></div>
+            <div class="result-box">
+                <div class="result-box__result" id="hits">0</div>
+                <div class="result-box__icon">💖</div>
+            </div>
+            <div class="result-box">
+                <div class="result-box__icon">💔</div>
+                <div class="result-box__result" id="fails">0</div>
+            </div>
         </div>
+
         <div class="popUp" id="popUp">
             <div class="popUp__result" id="popUpResult"></div>
         </div>
-        <div class="patchBabyHole" id="patchBabyHole"></div>
     </section>
     <button id="openMenu" class="menu-handler--open">
         <div class="line"></div>
