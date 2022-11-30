@@ -58,15 +58,6 @@ body {
 }
 
 /* --------------------- ANIMATED BACKGROUND ------------------- */
-.patchBabyHole {
-  height: 100px;
-  width: 100px;
-  background-color: red;
-  border-radius: 50%;
-  z-index: -1;
-  position: absolute;
-}
-
 .son {
   height: 70%;
   width: 70%;
@@ -76,8 +67,20 @@ body {
   justify-content: center;
   align-items: center;
 }
-
-.children1 {
+.son .menu-handler--open {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.son .patchBabyHole {
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  border-radius: 50%;
+  z-index: -1;
+  position: absolute;
+}
+.son .children1 {
   height: 400%;
   width: 300%;
   border: 2px solid red;
@@ -86,13 +89,11 @@ body {
   justify-content: center;
   align-items: center;
 }
-
-.children1 > * {
+.son .children1 > * {
   border: 5px solid red;
   box-shadow: 0 0 50px red;
 }
-
-.children2 {
+.son .children2 {
   height: 400%;
   width: 300%;
   border: 2px solid red;
@@ -101,13 +102,11 @@ body {
   justify-content: center;
   align-items: center;
 }
-
-.children2 > * {
+.son .children2 > * {
   border: 5px solid red;
   box-shadow: 0 0 50px red;
 }
-
-.childrens {
+.son .childrens {
   width: 90%;
   height: 90%;
   position: absolute;
@@ -124,7 +123,6 @@ body {
 .menu__background {
   height: 100vh;
   width: 100vw;
-  background-color: rgba(0, 0, 0, 0.281);
   position: absolute;
 }
 .menu__menu-box {
@@ -203,11 +201,20 @@ body {
   background-color: rgb(31, 192, 25);
   cursor: pointer;
 }
+.menu__menu-box .menu-box__controls .speed .selector:hover {
+  outline: 2px solid rgb(31, 192, 25);
+}
 .menu__menu-box .menu-box__controls .speed .selector:nth-child(2) {
   background-color: rgb(236, 223, 30);
 }
+.menu__menu-box .menu-box__controls .speed .selector:nth-child(2):hover {
+  outline: 2px solid rgb(236, 223, 30);
+}
 .menu__menu-box .menu-box__controls .speed .selector:nth-child(3) {
   background-color: rgb(192, 78, 25);
+}
+.menu__menu-box .menu-box__controls .speed .selector:nth-child(3):hover {
+  outline: 2px solid rgb(192, 78, 25);
 }
 .menu__menu-box .menu-box__controls .colors {
   display: flex;
@@ -253,6 +260,22 @@ body {
 }
 .menu__menu-box .menu-box__controls .colors__handler:hover {
   outline-width: 4px;
+}
+.menu-handler--close {
+  color: white;
+  margin-top: 3vh;
+  border-radius: 50%;
+  border: 2px solid white;
+  background-color: transparent;
+  height: 4vh;
+  width: 4vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.menu-handler--close:hover {
+  outline: 2px solid white;
 }
 
 @-webkit-keyframes spinY {

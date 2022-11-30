@@ -65,15 +65,6 @@ body {
 
 /* --------------------- ANIMATED BACKGROUND ------------------- */
 
-.patchBabyHole   {
-
-    height: 100px ;
-    width: 100px ;
-    background-color: red ;
-    border-radius: 50% ;
-    z-index : -1 ;
-    position : absolute ;
-}
 
 .son {
     height : 70% ;
@@ -83,46 +74,63 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
+    .menu-handler--open {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    
+    .patchBabyHole   {
+    
+        height: 100px ;
+        width: 100px ;
+        background-color: red ;
+        border-radius: 50% ;
+        z-index : -1 ;
+        position : absolute ;
+    }
+
+    .children1 {
+        height : 400% ;
+        width : 300% ;
+        border : 2px solid red ;
+        position: absolute;
+        display : flex ; 
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .children1 > *{
+        border : 5px solid red ;
+        box-shadow: 0 0 50px red;
+    }   
+    
+    .children2 {
+        height : 400% ;
+        width : 300% ;
+        border : 2px solid red ;
+        position: absolute;
+        display : flex ; 
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .children2 > *{
+        border : 5px solid red ;
+        box-shadow: 0 0 50px red;
+    } 
+    
+    .childrens {
+        width: 90% ;
+        height: 90% ;
+        position: absolute ;
+        display: flex ;
+        justify-content: center ;
+        align-items: center ;
+    }
 }
 
-.children1 {
-    height : 400% ;
-    width : 300% ;
-    border : 2px solid red ;
-    position: absolute;
-    display : flex ; 
-    justify-content: center;
-    align-items: center;
-}
-
-.children1 > *{
-    border : 5px solid red ;
-    box-shadow: 0 0 50px red;
-}   
-
-.children2 {
-    height : 400% ;
-    width : 300% ;
-    border : 2px solid red ;
-    position: absolute;
-    display : flex ; 
-    justify-content: center;
-    align-items: center;
-}
-
-.children2 > *{
-    border : 5px solid red ;
-    box-shadow: 0 0 50px red;
-} 
-
-.childrens {
-    width: 90% ;
-    height: 90% ;
-    position: absolute ;
-    display: flex ;
-    justify-content: center ;
-    align-items: center ;
-}
 
 .menu {
     height: 100vh;
@@ -133,7 +141,7 @@ body {
     &__background {
         height: 100vh;
         width: 100vw;
-        background-color: rgba(0, 0, 0, 0.281);
+        // background-color: rgba(0, 0, 0, 0.281);
         position: absolute;
     }
 
@@ -219,14 +227,25 @@ body {
                     .selector {
                         background-color:rgb(31, 192, 25);
                         cursor: pointer;
-                    }
 
+                        &:hover {
+                            outline: 2px solid rgb(31, 192, 25);
+                        }
+                    }
+                    
                     .selector:nth-child(2) {
                         background-color:rgb(236, 223, 30);
+                        
+                        &:hover {
+                            outline: 2px solid rgb(236, 223, 30);
+                        }
                     }
-
+                    
                     .selector:nth-child(3) {
                         background-color:rgb(192, 78, 25);
+                        &:hover {
+                            outline: 2px solid rgb(192, 78, 25);
+                        }
                     }
                 }
 
@@ -289,6 +308,24 @@ body {
                     }
                 }
             }
+        }
+    }
+
+    &-handler--close {
+        color: white;
+        margin-top: 3vh;
+        border-radius: 50%;
+        border: 2px solid white;
+        background-color: transparent;
+        height: 4vh;
+        width: 4vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        &:hover {
+            outline: 2px solid white;
         }
     }
 }
