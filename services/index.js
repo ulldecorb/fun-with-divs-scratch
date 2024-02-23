@@ -3,7 +3,7 @@
 
 const body = document.querySelector( "body" ); 
 
-const son = document.getElementById( "son" ); 
+const playBackground = document.getElementById( "playBackground" ); 
 const children1 = document.getElementById( "children1" );
 const children2 = document.getElementById( "children2" );
 const childrenX =document.getElementsByClassName( "children1" );
@@ -60,7 +60,7 @@ body.addEventListener('keydown', function (event) {
         catchDiv();      
     }    
 });
-son.addEventListener('click', function () {    
+playBackground.addEventListener('click', function () {    
         catchDiv();          
 });
 

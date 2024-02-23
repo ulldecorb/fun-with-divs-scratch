@@ -71,7 +71,7 @@ body {
 }
 
 /* --------------------- ANIMATED BACKGROUND ------------------- */
-.son {
+.playBackground {
   height: 100%;
   width: 100%;
   position: absolute;
@@ -80,7 +80,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-.son .patchBabyHole {
+.playBackground .patchBabyHole {
   height: 100px;
   width: 100px;
   background-color: red;
@@ -88,7 +88,7 @@ body {
   z-index: -1;
   position: absolute;
 }
-.son .children1 {
+.playBackground .children1 {
   height: 400%;
   width: 300%;
   border: 2px solid red;
@@ -97,11 +97,11 @@ body {
   justify-content: center;
   align-items: center;
 }
-.son .children1 > * {
+.playBackground .children1 > * {
   border: 5px solid red;
   box-shadow: 0 0 50px red;
 }
-.son .children2 {
+.playBackground .children2 {
   height: 400%;
   width: 300%;
   border: 2px solid red;
@@ -110,7 +110,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-.son .children2 > * {
+.playBackground .children2 > * {
   border: 5px solid red;
   box-shadow: 0 0 50px red;
 }
